@@ -1,10 +1,12 @@
 class MoneyDonatorsController < ApplicationController
+    
     def new
         $post = Post.find(params[:post])
         @donator = MoneyDonator.new()
     end
 
     def create
+        byebug
         @donator = $post.money_donators.create(donator_params)
         # redirect_to redirect_search
         # redirect_to add_payment_method_path(), format: 'js', :remote => true
