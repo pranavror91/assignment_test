@@ -1,0 +1,2 @@
+module MoneyDonatorsHelper
+end

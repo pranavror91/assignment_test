@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_052042) do
+ActiveRecord::Schema.define(version: 2020_03_01_102905) do
+
+  create_table "money_donators", force: :cascade do |t|
+    t.string "name"
+    t.string "contact_number"
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_money_donators_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -34,5 +43,6 @@ ActiveRecord::Schema.define(version: 2020_03_01_052042) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "money_donators", "posts"
   add_foreign_key "posts", "users"
 end
