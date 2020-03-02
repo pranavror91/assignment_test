@@ -1,9 +1,41 @@
-<h1>Hey Der</h1>
 
-<% if current_user %>
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to "new user registration", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path %>
-<% end %>   
+<h1 class="margin-class-header">Alpha Blog</h1>
 
-<%= link_to "posts", posts_path %>
+<div class="move-button">
+    <% if current_user %>
+    <%= link_to t('.Sign Out', :default => t("helpers.links.Sign Out")),
+    destroy_user_session_path, method: :delete,
+        :class => 'btn btn-primary' %>
+    <% else %>
+    <%= link_to t('.new registration', :default => t("helpers.links.new registration")),
+    new_user_registration_path,
+        :class => 'btn btn-primary' %> |
+    <%= link_to t('.Sign In', :default => t("helpers.links.Sign In")),
+    new_user_session_path,
+        :class => 'btn btn-primary' %>
+    <% end %> |  
+
+    <%= link_to t('.Post', :default => t("helpers.links.Post")),
+    posts_path,
+        :class => 'btn btn-primary .btn-mini' %>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <h3>About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800. It rose to dominate the personal computer operating system market with MS-DOS in the mid-1980s, followed by Microsoft Windows. The company's 1986 initial public offering (IPO), and subsequent rise in its share price, created three billionaires and an estimated 12,000 millionaires among Microsoft employees. Since the 1990s, it has increasingly diversified from the operating system market and has made a number of corporate acquisitions, their largest being the acquisition of LinkedIn for $26.2 billion in December 2016,[6] followed by their acquisition of Skype Technologies for $8.5 billion in May 2011.
+            <p>
+            <em>As of 2015, Microsoft is market-dominant in the IBM PC compatible operating system market and the office software suite market, although it has lost the majority of the overall operating system market to Android.[8] The company also produces a wide range of other consumer and enterprise software for desktops, laptops, tabs, gadgets, and servers, including Internet search (with Bing), the digital services market (through MSN), mixed reality (HoloLens), cloud computing (Azure), and software development (Visual Studio).</em>
+            <p>Steve Ballmer replaced Gates as CEO in 2000, and later envisioned a "devices and services" strategy.[9] This unfolded with Microsoft acquiring Danger Inc. in 2008,[10] entering the personal computer production market for the first time in June 2012 with the launch of the Microsoft Surface line of tablet computers, and later forming Microsoft Mobile through the acquisition of Nokia's devices and services division. Since Satya Nadella took over as CEO in 2014, the company has scaled back on hardware and has instead focused on cloud computing, a move that helped the company's shares reach its highest value since December 1999.[11][12]
+
+            Earlier dethroned by Apple in 2010, in 2018 Microsoft reclaimed its position as the most valuable publicly traded company in the world.[13] In April 2019, Microsoft reached the trillion-dollar market cap, becoming the third U.S. public company to be valued at over $1 trillion after Apple and Amazon respectively.[14]</p>
+            <p>Microsoft released Microsoft Windows on November 20, 1985 as a graphical extension for MS-DOS,[15]:242–243, 246 despite having begun jointly developing OS/2 with IBM the previous August.[30] Microsoft moved its headquarters from Bellevue to Redmond, Washington on February 26, 1986 and went public on March 13,[31] with the resulting rise in stock making an estimated four billionaires and 12,000 millionaires from Microsoft employees.[32] Microsoft released its version of OS/2 to original equipment manufacturers (OEMs) on April 2, 1987.[15] In 1990, the Federal Trade Commission examined Microsoft for possible collusion due to the partnership with IBM, marking the beginning of more than a decade of legal clashes with the government.[33] :243–244 Meanwhile, the company was at work on Microsoft Windows NT, which was heavily based on their copy of the OS/2 code. It shipped on July 21, 1993 with a new modular kernel and the 32-bit Win32 application programming interface (API), making it easier to port from 16-bit (MS-DOS-based) Windows. Microsoft informed IBM of Windows NT, and the OS/2 partnership deteriorated.[34]</p>
+                <a class="btn btn-primary btn-large">
+                Learn more
+                </a>
+            </p>
+    </div>
+</div>
+
+

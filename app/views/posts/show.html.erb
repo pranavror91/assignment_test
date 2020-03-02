@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @post.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @post.user_id %></dd>
+  <dd><%= @post.user.email %></dd>
 </dl>
 
 <%= link_to t('.donation', :default => t("helpers.links.donation")),

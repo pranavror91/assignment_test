@@ -1,3 +1,8 @@
+
+<body class="body-color">
 <%= form_tag create_payment_method_path, id: "billing-create-payment-method" do  %>
-  <%= link_to "Let's go", add_payment_method_path, remote: true, class: "btn btn-primary" %>
+  <%= link_to "Let's go", add_payment_method_path, remote: true, class: "btn btn-primary", id: "button-moving" %>
 <% end %>
+
+<p class="moving-text">Please Click On the Link For Donating Money!!</p>
+</body>
