@@ -8,18 +8,11 @@ class MoneyDonatorsController < ApplicationController
     def create
         post = Post.find_by(id: params[:money_donator][:post_id])
         @donator = post.money_donators.create(donator_params)
-        # redirect_to redirect_search
-        # redirect_to add_payment_method_path(), format: 'js', :remote => true
-        # respond_to do |format|
-        #     format.js {render :js => "window.location.href='"+add_payment_method_path+"'"}
-        #     # format.js { redirect_to add_payment_method_path }
-        # end
-        # @donator = MoneyDonator.new(donator_params)
         if @donator.save!
             redirect_to billings_path()
-            flash[:notice] = "hey saved"
+            flash[:notice] = "Donator Saved Sucessfully"
         else
-            flash[:notice] = "not saved"
+            flash[:notice] = "Donator not saved"
         end
     end
 
