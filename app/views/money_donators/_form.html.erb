@@ -1,4 +1,4 @@
-  <%= form_for @donator, :html => { :class => "form-horizontal donator" } do |f| %>
+  <%= form_for [@donator], :html => { :class => "form-horizontal donator" } do |f| %>
 
     <% if @donator.errors.any? %>
       <div id="error_explanation" class="panel panel-danger">
@@ -27,6 +27,7 @@
       <div class="col-lg-10">
         <%= f.text_field :contact_number, :class => 'form-control' %>
       </div>
+      <%= f.hidden_field :post_id, value: @donator.post_id %>
       <%=f.error_span(:contact_number) %>
     </div>
   
